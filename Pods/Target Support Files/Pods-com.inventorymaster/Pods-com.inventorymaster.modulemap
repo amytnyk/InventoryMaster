@@ -1,0 +1,6 @@
+framework module Pods_com_inventorymaster {
+  umbrella header "Pods-com.inventorymaster-umbrella.h"
+
+  export *
+  module * { export * }
+}

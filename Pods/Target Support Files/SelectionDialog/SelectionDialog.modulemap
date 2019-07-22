@@ -1,0 +1,6 @@
+framework module SelectionDialog {
+  umbrella header "SelectionDialog-umbrella.h"
+
+  export *
+  module * { export * }
+}
