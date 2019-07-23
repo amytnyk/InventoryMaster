@@ -6,24 +6,26 @@
   Copyright © 2019 Alex Mytnyk. All rights reserved.
 */
 
-"Name" = "Name";
+"Name" = "Назва";
 
-"Count" = "Count";
+"Count" = "Кількість";
 
-"Expected count" = "Expected count";
+"Expected count" = "Очікувана кількість";
 
-"Article" = "Article";
+"Article" = "Артикул";
 
-"Barcode" = "Barcode";
+"Barcode" = "Штрихкод";
 
-"Not yet in the database" = "Not yet in the database";
+"Not yet in the database" = "Ще немає в базі";
 
-"Not yet in the pre-database" = "Not yet in the pre-database";
+"Not yet in the pre-database" = "Немає у відомості";
 
 "OK" = "OK";
 
-"CANCEL" = "CANCEL";
+"CANCEL" = "Скасувати";
 
-"Choose count" = "Choose count";
+"Choose count" = "Виберіть кількість";
 
-"Close" = "Close";
+"Close" = "Закрити";
+
+"Select item" = "Виберіть товар";

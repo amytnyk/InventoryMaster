@@ -1,12 +1,12 @@
 
 /* Class = "UIButton"; normalTitle = "  Remove  "; ObjectID = "58V-0y-U1x"; */
-"58V-0y-U1x.normalTitle" = "  Remove  ";
+"58V-0y-U1x.normalTitle" = "  Видалити  ";
 
 /* Class = "UITextView"; text = "Scanning..."; ObjectID = "Xme-3k-iyZ"; */
-"Xme-3k-iyZ.text" = "Scanning...";
+"Xme-3k-iyZ.text" = "\n\nСкануємо...";
 
 /* Class = "UIButton"; normalTitle = "  Add  "; ObjectID = "bKe-sK-C2E"; */
-"bKe-sK-C2E.normalTitle" = "  Add  ";
+"bKe-sK-C2E.normalTitle" = "  Додати  ";
 
 /* Class = "UIButton"; normalTitle = "  Add count  "; ObjectID = "fwh-XW-Udd"; */
-"fwh-XW-Udd.normalTitle" = "  Add count  ";
+"fwh-XW-Udd.normalTitle" = "  Додати к-ть  ";

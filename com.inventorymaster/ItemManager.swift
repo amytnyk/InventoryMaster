@@ -16,6 +16,7 @@ class ItemManager {
     static var cloud_data : Array<Item> = Array()
     static var ref : DatabaseReference!
     static var current_item : Item?
+    static var viewController : ViewController?
     
     static func addCurrentItem(_ count : Int) {
         if current_item != nil {
@@ -83,6 +84,7 @@ class ItemManager {
         
         if (index != nil) {
             setCurrentItemByBar(bar: items[index!].bar)
+            viewController?.setDisplayItem(current_item!)
         }
     }
     
@@ -119,6 +121,9 @@ class ItemManager {
         _ref.child("json").observeSingleEvent(of: .value, with: { (snapshot) in
             print("Received json data")
             let values = snapshot.value as? NSArray
+            if (values == nil) {
+                return
+            }
             for _item in values! {
                 let item : NSDictionary = _item as! NSDictionary
                 items.append(Item(_art: item.value(forKey: "art") as! String, _bar: item.value(forKey: "barcode") as! String, _name: item.value(forKey: "name") as! String, _count: 0))
@@ -127,6 +132,9 @@ class ItemManager {
         
         _ref.child("pre_data").observeSingleEvent(of: .value, with: { (snapshot) in
             let values = snapshot.value as? NSArray
+            if (values == nil) {
+                return
+            }
             for _item in values! {
                 let item : NSDictionary = _item as! NSDictionary
                 pre_items.append(Item(_art: item.value(forKey: "art") as! String, _bar: "", _name: "", _count: item.value(forKey: "count") as! Int))
@@ -135,6 +143,9 @@ class ItemManager {
         
         _ref.child("non_scannable_items").observeSingleEvent(of: .value, with: { (snapshot) in
             let values = snapshot.value as? NSArray
+            if (values == nil) {
+                return
+            }
             for _item in values! {
                 let item : NSDictionary = _item as! NSDictionary
                 non_scannable_items.append(Item(_art: item.value(forKey: "art") as! String, _bar: "", _name: item.value(forKey: "name") as! String, _count: 0))
@@ -144,12 +155,18 @@ class ItemManager {
             var new_cloud_data = Array<Item>()
             
             let values = snapshot.value as? NSDictionary
+            if values == nil {
+                return
+            }
             for _item in values! {
                 let item : NSDictionary = _item.value as! NSDictionary
                 new_cloud_data.append(Item(_art: _item.key as! String, _bar: item.value(forKey: "barcode") as! String, _name: item.value(forKey: "name") as! String, _count: item.value(forKey: "count") as! Int))
             }
             
             cloud_data = new_cloud_data
+            if (viewController != nil && current_item != nil) {
+                viewController?.setDisplayItem(current_item!)
+            }
         })
     }
 }

@@ -10,6 +10,13 @@ import UIKit
 import AVFoundation
 import SelectionDialog
 
+extension String {
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+}
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     var last_count : Int = 0
     
@@ -39,10 +46,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     
     @IBAction func AddCountButtonClicked(_ sender: UIButton) {
         // Show dialog here
-        let alert = UIAlertController(title: "Choose count", message: "\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose count".localized, message: "\n\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         alert.isModalInPopover = true
         
-        let pickerFrame = CGRect(x: 17, y: 52, width: 270, height: 100)
+        let pickerFrame = CGRect(x: 0, y: 50, width: 260, height: 210)
         let picker = UIPickerView(frame: pickerFrame)
         
         picker.delegate = self
@@ -50,10 +57,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         
         alert.view.addSubview(picker)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+        last_count = 1
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: {(action) in
             ItemManager.addCurrentItem(self.last_count)
         }))
-        alert.addAction(UIAlertAction(title: "CANCEL", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "CANCEL".localized, style: .default, handler: nil))
         
         present(alert, animated: true, completion: nil)
     }
@@ -68,15 +76,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     }
     
     @IBAction func addNonScannableItemButtonClicked(_ sender: UIButton) {
-        /*let dialog = SelectionDialog(title: "Dialog", closeButtonTitle: "Close")
+        let dialog = SelectionDialog(title: "Select item".localized, closeButtonTitle: "Close".localized)
         
         for item in ItemManager.non_scannable_items.enumerated() {
             dialog.addItem(item: "\(item.element.art) - \(item.element.name)", didTapHandler: { () in
                 self.addNonScannableItem(item.offset)
+                dialog.close()
             })
         }
         
-        dialog.show()*/
+        dialog.show()
     }
     
     @IBOutlet weak var addNonScannableItemButton: UIButton!
@@ -85,56 +94,73 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var itemTextView: UITextView!
     
+    var captureSession: AVCaptureSession!
+    var previewLayer: AVCaptureVideoPreviewLayer!
+    
     @IBOutlet weak var MainView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Creating session
-        let session = AVCaptureSession()
+        view.backgroundColor = UIColor.black
+        captureSession = AVCaptureSession()
         
-        // Define capture device
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        let videoInput: AVCaptureDeviceInput
         
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            session.addInput(input)
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
         }
-        catch {
+        
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
             print("ERROR")
+            return
         }
         
-        let output = AVCaptureMetadataOutput()
+        let metadataOutput = AVCaptureMetadataOutput()
         
-        session.addOutput(output)
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .dataMatrix, .aztec, .itf14, .interleaved2of5, .pdf417, .code39Mod43, .qr]
+            metadataOutput.rectOfInterest = CGRect(x: 0.25, y: 0.25, width: 0.5, height: 0.5)
+        } else {
+            print("ERROR")
+            return
+        }
         
-        output.metadataObjectTypes = [AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeDataMatrixCode, AVMetadataObjectTypeAztecCode, AVMetadataObjectTypeITF14Code, AVMetadataObjectTypeInterleaved2of5Code, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeQRCode]
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(previewLayer)
         
-        output.rectOfInterest = CGRect(x: 0.25, y: 0.25, width: 0.5, height: 0.5)
+        view.bringSubviewToFront(MainView)
         
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
-        
-        view.layer.addSublayer(video)
-        self.view.bringSubview(toFront: MainView)
-        
-        session.startRunning()
-        
+        captureSession.startRunning()
         setVisibility(false);
+        
+        ItemManager.viewController = self
     }
     
     func setVisibility(_ visibility : Bool) {
         addButton.isHidden = !visibility
         addCountButton.isHidden = !visibility
         removeButton.isHidden = !visibility
-        itemTextView.isHidden = !visibility
+        //itemTextView.isHidden = !visibility
         addNonScannableItemButton.isHidden = !visibility
     }
     
     func setDisplayItem(_ item : Item) {
         setVisibility(true);
-        itemTextView.text = item.toString()
+        DispatchQueue.main.async {
+            self.itemTextView.text = "\n\(item.toString())"
+        }
+        
         
         if (ItemManager.findByArt(art: item.art, array: ItemManager.cloud_data) == nil) {
             removeButton.isHidden = true
@@ -143,10 +169,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         }
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        if metadataObjects != nil && metadataObjects.count != 0 {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        print("Detected")
+        if metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
-                if object.type == AVMetadataObjectTypeEAN13Code {
+                if object.type == AVMetadataObject.ObjectType.ean13 {
                     let previous = ItemManager.current_item
                     
                     ItemManager.setCurrentItemByBar(bar: object.stringValue!)

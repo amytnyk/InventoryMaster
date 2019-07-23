@@ -6,24 +6,27 @@
   Copyright © 2019 Alex Mytnyk. All rights reserved.
 */
 
-"Name" = "Name";
+"Name" = "Название";
 
-"Count" = "Count";
+"Count" = "Количество";
 
-"Expected count" = "Expected count";
+"Expected count" = "Ожидаемое количество";
 
-"Article" = "Article";
+"Article" = "Артикул";
 
-"Barcode" = "Barcode";
+"Barcode" = "Штрихкод";
 
-"Not yet in the database" = "Not yet in the database";
+"Not yet in the database" = "Еще нет в базе";
 
-"Not yet in the pre-database" = "Not yet in the pre-database";
+"Not yet in the pre-database" = "Нет в ведомости";
 
 "OK" = "OK";
 
-"CANCEL" = "CANCEL";
+"CANCEL" = "Отменить";
+/* Choose_count */
+"Choose count" = "Выберите количество";
 
-"Choose count" = "Choose count";
+"Close" = "Закрыть";
 
-"Close" = "Close";
+"Select item" = "Выберите товар";
+

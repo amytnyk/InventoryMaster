@@ -25,22 +25,22 @@ class Item {
     
     func toString() -> String {
         var str : String = """
-        Name: \(name)
-        Article: \(art)
-        Barcode: \(bar)
+        \("Name".localized): \(name.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines)))
+        \("Article".localized): \(art)
+        \("Barcode".localized): \(bar)
         """
         let index = ItemManager.findByArt(art: art, array: ItemManager.cloud_data)
         if index == nil {
-            str += "\nNot yet in the database"
+            str += "\n\("Not yet in the database".localized)"
         } else {
-            str += "\nCount: " + String(ItemManager.cloud_data[index!].count)
+            str += "\n\("Count".localized): " + String(ItemManager.cloud_data[index!].count)
         }
         
         let pre_index = ItemManager.findByArt(art: art, array: ItemManager.pre_items)
         if pre_index == nil {
-            str += "\nNot yet in the pre-database"
+            str += "\n\("Not yet in the pre-database".localized)"
         } else {
-            str += "\nExpected count: " + String(ItemManager.pre_items[pre_index!].count)
+            str += "\n\("Expected count".localized): " + String(ItemManager.pre_items[pre_index!].count)
         }
         
         return str

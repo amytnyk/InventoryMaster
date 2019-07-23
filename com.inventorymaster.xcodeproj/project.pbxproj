@@ -16,6 +16,7 @@
 		FA2274D322E59BF300885F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2274D122E59BF300885F33 /* Main.storyboard */; };
 		FA2274D522E59BF300885F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2274D422E59BF300885F33 /* Assets.xcassets */; };
 		FA2274D822E59BF300885F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2274D622E59BF300885F33 /* LaunchScreen.storyboard */; };
+		FA36B84B22E6FE7E00D3CF1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA36B84D22E6FE7E00D3CF1E /* Localizable.strings */; };
 		FA604BB222E5E8A0005986AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA604BB122E5E8A0005986AC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -26,13 +27,20 @@
 		FA1C89C822E5A8270069B87E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA1C89C922E5A8270069B87E /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		FA1C89CC22E5A8AE0069B87E /* TimeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGroup.swift; sourceTree = "<group>"; };
-		FA2274CA22E59BF300885F33 /* com.inventorymaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.inventorymaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA2274CA22E59BF300885F33 /* Inventory Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inventory Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2274CD22E59BF300885F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2274CF22E59BF300885F33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA2274D222E59BF300885F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA2274D422E59BF300885F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = com.inventorymaster/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		FA2274D722E59BF300885F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2274D922E59BF300885F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA36B84522E6F65F00D3CF1E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		FA36B84622E6F65F00D3CF1E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FA36B84722E6F84B00D3CF1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FA36B84822E6F84B00D3CF1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FA36B84C22E6FE7E00D3CF1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA36B84E22E6FF3800D3CF1E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA36B84F22E6FF3B00D3CF1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA604BB122E5E8A0005986AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +86,7 @@
 		FA2274CB22E59BF300885F33 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA2274CA22E59BF300885F33 /* com.inventorymaster.app */,
+				FA2274CA22E59BF300885F33 /* Inventory Master.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 				FA1C89C922E5A8270069B87E /* ItemManager.swift */,
 				FA1C89CC22E5A8AE0069B87E /* TimeGroup.swift */,
 				FA604BB122E5E8A0005986AC /* GoogleService-Info.plist */,
+				FA36B84D22E6FE7E00D3CF1E /* Localizable.strings */,
 			);
 			path = com.inventorymaster;
 			sourceTree = "<group>";
@@ -119,7 +128,7 @@
 			);
 			name = com.inventorymaster;
 			productName = com.inventorymaster;
-			productReference = FA2274CA22E59BF300885F33 /* com.inventorymaster.app */;
+			productReference = FA2274CA22E59BF300885F33 /* Inventory Master.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,7 +138,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Alex Mytnyk";
 				TargetAttributes = {
 					FA2274C922E59BF300885F33 = {
@@ -145,6 +154,8 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
+				ru,
 			);
 			mainGroup = FA2274C122E59BF300885F33;
 			productRefGroup = FA2274CB22E59BF300885F33 /* Products */;
@@ -161,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA36B84B22E6FE7E00D3CF1E /* Localizable.strings in Resources */,
 				FA2274D822E59BF300885F33 /* LaunchScreen.storyboard in Resources */,
 				FA604BB222E5E8A0005986AC /* GoogleService-Info.plist in Resources */,
 				FA2274D522E59BF300885F33 /* Assets.xcassets in Resources */,
@@ -235,6 +247,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA2274D222E59BF300885F33 /* Base */,
+				FA36B84522E6F65F00D3CF1E /* uk */,
+				FA36B84722E6F84B00D3CF1E /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -243,8 +257,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA2274D722E59BF300885F33 /* Base */,
+				FA36B84622E6F65F00D3CF1E /* uk */,
+				FA36B84822E6F84B00D3CF1E /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA36B84D22E6FE7E00D3CF1E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA36B84C22E6FE7E00D3CF1E /* en */,
+				FA36B84E22E6FF3800D3CF1E /* uk */,
+				FA36B84F22E6FF3B00D3CF1E /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -254,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -264,6 +291,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -271,6 +299,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -298,10 +327,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos11.2;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -311,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -321,6 +351,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -328,6 +359,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -349,10 +381,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos11.2;
+				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -366,12 +398,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A2GQ3ZN9T;
 				INFOPLIST_FILE = com.inventorymaster/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "alexm.com-inventorymaster";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos11.2;
-				SWIFT_VERSION = 3.0;
+				PRODUCT_NAME = "Inventory Master";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -384,13 +416,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A2GQ3ZN9T;
 				INFOPLIST_FILE = com.inventorymaster/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "alexm.com-inventorymaster";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos11.2;
-				SWIFT_VERSION = 3.0;
+				PRODUCT_NAME = "Inventory Master";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

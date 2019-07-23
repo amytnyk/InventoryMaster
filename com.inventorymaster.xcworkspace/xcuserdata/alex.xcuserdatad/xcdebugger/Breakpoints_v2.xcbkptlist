@@ -10,59 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "com.inventorymaster/ItemManager.swift"
-            timestampString = "585500958.378817"
+            timestampString = "585565421.456965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "LoadData(_ref:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static com_inventorymaster.ItemManager.LoadData(_ref: Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.DatabaseReference&gt;) -&gt; ()"
-                  moduleName = "com.inventorymaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alex/Desktop/com.inventorymaster/com.inventorymaster/ItemManager.swift"
-                  timestampString = "585493080.296711"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "2172">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 (__ObjC.DataSnapshot) -&gt; () in static com_inventorymaster.ItemManager.LoadData(_ref: Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.DatabaseReference&gt;) -&gt; ()"
-                  moduleName = "com.inventorymaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alex/Desktop/com.inventorymaster/com.inventorymaster/ItemManager.swift"
-                  timestampString = "585493080.299014"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "3760">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "com.inventorymaster/ItemManager.swift"
-            timestampString = "585500958.3791699"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "LoadData(_ref:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,12 +26,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "com.inventorymaster/Item.swift"
-            timestampString = "585500958.379415"
+            timestampString = "585565421.457033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "toString()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "com.inventorymaster/ViewController.swift"
+            timestampString = "585565421.457083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "com.inventorymaster/ViewController.swift"
+            timestampString = "585565421.457154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "setDisplayItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
