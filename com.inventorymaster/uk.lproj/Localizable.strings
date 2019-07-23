@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  com.inventorymaster
+
+  Created by Alex on 7/23/19.
+  Copyright © 2019 Alex Mytnyk. All rights reserved.
+*/
+
+"Name" = "Name";
+
+"Count" = "Count";
+
+"Expected count" = "Expected count";
+
+"Article" = "Article";
+
+"Barcode" = "Barcode";
+
+"Not yet in the database" = "Not yet in the database";
+
+"Not yet in the pre-database" = "Not yet in the pre-database";
+
+"OK" = "OK";
+
+"CANCEL" = "CANCEL";
+
+"Choose count" = "Choose count";
+
+"Close" = "Close";
