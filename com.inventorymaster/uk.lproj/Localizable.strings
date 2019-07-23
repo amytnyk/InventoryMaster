@@ -29,3 +29,11 @@
 "Close" = "Закрити";
 
 "Select item" = "Виберіть товар";
+
+"You are not connected to the internet!" = "Ви не підключені до інтернету!";
+
+"It's recommended you check internet connection, because your changes since this moment will be lost" = "Рекомендуємо вам перевірити інтернет з'єднання, оскільки з цього моменту всі ваші зміни будуть втрачені";
+
+"You are connected to the internet!" = "Ви підключені до інтернету!";
+
+"All is OK" = "Все добре";

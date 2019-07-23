@@ -30,3 +30,11 @@
 
 "Select item" = "Выберите товар";
 
+"You are not connected to the internet!" = "Вы не подключены к интернету!";
+
+"It's recommended you check internet connection, because your changes since this moment will be lost" = "Рекомендуется проверить интернет соединение, поскольку с етого момента все изменения будут потеряны";
+
+"You are connected to the internet!" = "Вы подключены к интернету!";
+
+"All is OK" = "Все хорошо";
+

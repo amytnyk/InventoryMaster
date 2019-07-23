@@ -39,6 +39,22 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     
     var video = AVCaptureVideoPreviewLayer()
     
+    func showNotConnectedWarning() {
+        let alert = UIAlertController(title: "You are not connected to the internet!".localized, message: "It's recommended you check internet connection, because your changes since this moment will be lost".localized, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
+    }
+    
+    func showConnectedAlert() {
+        let alert = UIAlertController(title: "You are connected to the internet!".localized, message: "All is OK".localized, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
+    }
+    
     @IBAction func AddButtonClicked(_ sender: UIButton) {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         ItemManager.addCurrentItem(1)
@@ -145,14 +161,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         setVisibility(false);
         
         ItemManager.viewController = self
+        ConnectionManager.viewController = self
     }
     
     func setVisibility(_ visibility : Bool) {
         addButton.isHidden = !visibility
         addCountButton.isHidden = !visibility
         removeButton.isHidden = !visibility
-        //itemTextView.isHidden = !visibility
-        addNonScannableItemButton.isHidden = !visibility
+        // itemTextView.isHidden = !visibility
+        // addNonScannableItemButton.isHidden = !visibility
     }
     
     func setDisplayItem(_ item : Item) {
