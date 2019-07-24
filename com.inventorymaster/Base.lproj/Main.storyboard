@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,52 +13,17 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="com_inventorymaster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Inventory_Master" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mb-IV-D1n">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-3T-U6Q">
-                                        <rect key="frame" x="0.0" y="397" width="320" height="83"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwh-XW-Udd">
-                                                <rect key="frame" x="202" y="22" width="118" height="39"/>
-                                                <color key="backgroundColor" red="0.096926998289999997" green="0.47324319949999999" blue="0.12460877319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <state key="normal" title="  Add count  ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="AddCountButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="yOx-aC-m8P"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKe-sK-C2E">
-                                                <rect key="frame" x="0.0" y="22" width="59" height="39"/>
-                                                <color key="backgroundColor" red="0.096926998292602623" green="0.47324319948186533" blue="0.12460877323628221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <state key="normal" title="  Add  ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="AddButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="5u1-Hr-lIu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fwh-XW-Udd" secondAttribute="trailing" id="BgN-og-2ov"/>
-                                            <constraint firstItem="bKe-sK-C2E" firstAttribute="leading" secondItem="8x2-3T-U6Q" secondAttribute="leading" id="WmT-m6-edC"/>
-                                            <constraint firstItem="bKe-sK-C2E" firstAttribute="top" secondItem="8x2-3T-U6Q" secondAttribute="top" constant="22" id="aIV-dO-k1j"/>
-                                            <constraint firstAttribute="bottom" secondItem="bKe-sK-C2E" secondAttribute="bottom" constant="22" id="cQT-wJ-uoF"/>
-                                            <constraint firstAttribute="bottom" secondItem="fwh-XW-Udd" secondAttribute="bottom" constant="22" id="cl5-cs-fjQ"/>
-                                            <constraint firstItem="fwh-XW-Udd" firstAttribute="top" secondItem="8x2-3T-U6Q" secondAttribute="top" constant="22" id="qg8-Lp-Qp3"/>
-                                        </constraints>
-                                    </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Scanning..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xme-3k-iyZ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Scanning..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xme-3k-iyZ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="204"/>
-                                        <color key="backgroundColor" red="0.096926998289999997" green="0.47324319949999999" blue="0.12460877319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.51372549020000002" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="204" id="jkK-cN-dFv"/>
                                         </constraints>
@@ -67,14 +32,14 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-qw-3lr">
-                                        <rect key="frame" x="0.0" y="217" width="40" height="40"/>
-                                        <color key="backgroundColor" red="0.096926998289999997" green="0.47324319949999999" blue="0.12460877319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="217" width="54" height="54"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.51372549020000002" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="PLc-q5-rQL"/>
-                                            <constraint firstAttribute="width" constant="40" id="ScI-CL-b6l"/>
+                                            <constraint firstAttribute="height" constant="54" id="PLc-q5-rQL"/>
+                                            <constraint firstAttribute="width" constant="54" id="ScI-CL-b6l"/>
                                             <constraint firstAttribute="width" secondItem="5Kg-qw-3lr" secondAttribute="height" multiplier="1:1" id="nuB-Ze-NAA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <size key="titleShadowOffset" width="4" height="4"/>
                                         <state key="normal" backgroundImage="Image">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,10 +48,41 @@
                                             <action selector="addNonScannableItemButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="OFc-vO-eOJ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwh-XW-Udd">
+                                        <rect key="frame" x="176" y="495" width="144" height="48"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.51372549020000002" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="KIf-0Y-AFN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <state key="normal" title="  Add count   ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="AddCountButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="yOx-aC-m8P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKe-sK-C2E">
+                                        <rect key="frame" x="0.0" y="495" width="76" height="48"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.51372549020000002" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="WEj-bO-cUg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                        <state key="normal" title="  Add  ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="AddButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="5u1-Hr-lIu"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58V-0y-U1x">
-                                        <rect key="frame" x="227" y="217" width="93" height="38"/>
-                                        <color key="backgroundColor" red="0.096926998289999997" green="0.47324319949999999" blue="0.12460877319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <rect key="frame" x="96.5" y="212" width="127" height="59"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.51372549020000002" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="kw5-0Q-ESb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="21"/>
                                         <state key="normal" title="  Remove  ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -94,17 +90,36 @@
                                             <action selector="RemoveButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="3yU-wr-Nj2"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ2-dp-Z0J">
+                                        <rect key="frame" x="266" y="217" width="54" height="54"/>
+                                        <color key="backgroundColor" red="0.85882352939999995" green="0.51372549020000002" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="R5o-W3-1Iv"/>
+                                            <constraint firstAttribute="width" constant="54" id="hYq-2g-2VM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <size key="titleShadowOffset" width="4" height="4"/>
+                                        <state key="normal" backgroundImage="Image-1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addByBarcodeButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="0yd-OU-gQE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="8x2-3T-U6Q" firstAttribute="leading" secondItem="8mb-IV-D1n" secondAttribute="leading" id="295-ec-zV5"/>
-                                    <constraint firstAttribute="trailing" secondItem="58V-0y-U1x" secondAttribute="trailing" id="2ch-u6-o8Y"/>
-                                    <constraint firstItem="58V-0y-U1x" firstAttribute="top" secondItem="Xme-3k-iyZ" secondAttribute="bottom" constant="13" id="6Qx-WZ-G1Y"/>
+                                    <constraint firstItem="58V-0y-U1x" firstAttribute="top" secondItem="Xme-3k-iyZ" secondAttribute="bottom" constant="8" id="Bs5-1e-iU2"/>
+                                    <constraint firstAttribute="trailing" secondItem="fwh-XW-Udd" secondAttribute="trailing" id="NJ3-P7-PG6"/>
                                     <constraint firstAttribute="trailing" secondItem="Xme-3k-iyZ" secondAttribute="trailing" id="Sa7-ca-NTh"/>
+                                    <constraint firstItem="bKe-sK-C2E" firstAttribute="leading" secondItem="8mb-IV-D1n" secondAttribute="leading" id="VyW-3y-p6X"/>
                                     <constraint firstItem="5Kg-qw-3lr" firstAttribute="leading" secondItem="8mb-IV-D1n" secondAttribute="leading" id="adD-Ry-Swv"/>
-                                    <constraint firstAttribute="bottom" secondItem="8x2-3T-U6Q" secondAttribute="bottom" id="b9P-ss-efs"/>
                                     <constraint firstItem="Xme-3k-iyZ" firstAttribute="top" secondItem="8mb-IV-D1n" secondAttribute="top" id="fW0-mw-HrY"/>
+                                    <constraint firstAttribute="trailing" secondItem="AZ2-dp-Z0J" secondAttribute="trailing" id="hbR-Bh-qTG"/>
+                                    <constraint firstItem="AZ2-dp-Z0J" firstAttribute="top" secondItem="Xme-3k-iyZ" secondAttribute="bottom" constant="13" id="knR-SG-EyL"/>
                                     <constraint firstItem="Xme-3k-iyZ" firstAttribute="leading" secondItem="8mb-IV-D1n" secondAttribute="leading" id="pWW-vT-RMD"/>
-                                    <constraint firstAttribute="trailing" secondItem="8x2-3T-U6Q" secondAttribute="trailing" id="sCq-eg-hSq"/>
+                                    <constraint firstItem="58V-0y-U1x" firstAttribute="centerX" secondItem="8mb-IV-D1n" secondAttribute="centerX" id="q5M-cJ-fbL"/>
+                                    <constraint firstAttribute="bottom" secondItem="bKe-sK-C2E" secondAttribute="bottom" constant="25" id="qmk-Jo-mIX"/>
+                                    <constraint firstAttribute="bottom" secondItem="fwh-XW-Udd" secondAttribute="bottom" constant="25" id="vH7-si-U5k"/>
                                     <constraint firstItem="5Kg-qw-3lr" firstAttribute="top" secondItem="Xme-3k-iyZ" secondAttribute="bottom" constant="13" id="xQa-89-DVJ"/>
                                 </constraints>
                             </view>
@@ -121,6 +136,7 @@
                     <connections>
                         <outlet property="MainView" destination="8mb-IV-D1n" id="New-BG-8Ia"/>
                         <outlet property="addButton" destination="bKe-sK-C2E" id="evh-Gq-V2v"/>
+                        <outlet property="addByBarcodeButton" destination="AZ2-dp-Z0J" id="6cR-mA-pfw"/>
                         <outlet property="addCountButton" destination="fwh-XW-Udd" id="W8m-SC-hBx"/>
                         <outlet property="addNonScannableItemButton" destination="5Kg-qw-3lr" id="o9Y-MI-8uv"/>
                         <outlet property="itemTextView" destination="Xme-3k-iyZ" id="izZ-tJ-nWy"/>
@@ -129,10 +145,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43.125" y="37.5"/>
+            <point key="canvasLocation" x="43.125" y="35"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image" width="18" height="18"/>
+        <image name="Image-1" width="18" height="18"/>
     </resources>
 </document>

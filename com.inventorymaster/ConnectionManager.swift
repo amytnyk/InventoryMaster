@@ -15,28 +15,53 @@ class ConnectionManager {
         case NotConnected
         case Undefined
     }
-    static var _state : State = .Undefined
+    static var state : State = .Undefined
     static var viewController : ViewController?
     static var was_not_connected = false
+    static var background_mode = false {
+        willSet {
+            if !newValue {
+                switch state {
+                case .Connected:
+                    if was_not_connected {
+                        viewController?.showConnectionAlert(connected: true)
+                    }
+                case .NotConnected:
+                    if !was_not_connected {
+                        viewController?.showConnectionAlert(connected: false)
+                    }
+                case .Undefined:
+                    break
+                }
+            }
+        }
+    }
     static func startObserving() {
-        let connectedRef = Database.database().reference(withPath: ".info/connected")
+        let connectedRef = Database.database().reference(withPath: ".info/connected") // path for connected inforamtion
         connectedRef.observe(.value, with: { snapshot in
             if snapshot.value as? Bool ?? false {
-                if was_not_connected {
-                    viewController?.showConnectedAlert()
-                }
-                _state = .Connected
-            } else {
-                _state = .NotConnected
-                let queue = DispatchQueue(label: "label")
-                queue.async {
-                    usleep(1500000)
-                    if _state == .NotConnected {
-                        was_not_connected = true
-                        viewController?.showNotConnectedWarning()
+                state = .Connected
+                if !background_mode {
+                    if was_not_connected {
+                        viewController?.showConnectionAlert(connected: true)
+                        was_not_connected = false
                     }
                 }
                 
+            } else {
+                state = .NotConnected
+                if !background_mode {
+                    let queue = DispatchQueue(label: "label")
+                    queue.async {
+                        usleep(1500000) // 1500 millis
+                        if state == .NotConnected {
+                            was_not_connected = true
+                            if !background_mode {
+                                viewController?.showConnectionAlert(connected: false)
+                            }
+                        }
+                    }
+                }
             }
         })
     }

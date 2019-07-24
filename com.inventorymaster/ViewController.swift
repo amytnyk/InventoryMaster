@@ -10,13 +10,17 @@ import UIKit
 import AVFoundation
 import SelectionDialog
 
+extension UIColor {
+    public static let defaultColor =
+        UIColor(red: 219/255, green: 131/255, blue: 7/255, alpha: 1.0)
+}
+
 extension String {
-    
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
-    
 }
+
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     var last_count : Int = 0
     
@@ -39,7 +43,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     
     var video = AVCaptureVideoPreviewLayer()
     
-    func showNotConnectedWarning() {
+    func showConnectionAlert(connected : Bool) {
+        if connected {
+            showConnectedAlert()
+        } else {
+            showNotConnectedWarning()
+        }
+    }
+    
+    private func showNotConnectedWarning() {
         let alert = UIAlertController(title: "You are not connected to the internet!".localized, message: "It's recommended you check internet connection, because your changes since this moment will be lost".localized, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
@@ -47,7 +59,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         present(alert, animated: true)
     }
     
-    func showConnectedAlert() {
+    private func showConnectedAlert() {
         let alert = UIAlertController(title: "You are connected to the internet!".localized, message: "All is OK".localized, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK".localized, style: .cancel, handler: nil))
@@ -56,7 +68,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     }
     
     @IBAction func AddButtonClicked(_ sender: UIButton) {
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         ItemManager.addCurrentItem(1)
     }
     
@@ -83,7 +95,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     }
     
     @IBAction func RemoveButtonClicked(_ sender: UIButton) {
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         ItemManager.removeCurrentItem()
     }
     
@@ -109,6 +121,32 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
     @IBOutlet weak var addCountButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var itemTextView: UITextView!
+    @IBOutlet weak var addByBarcodeButton: UIButton!
+    
+    @IBAction func addByBarcodeButtonClicked(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Add item by barcode".localized, message: "".localized, preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { (textField) in
+            textField.placeholder = "Enter barcode here".localized
+            textField.keyboardType = .numberPad
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: { (action) in
+            let textField = alert.textFields![0] as UITextField
+            let previous = ItemManager.current_item
+            
+            ItemManager.setCurrentItemByBar(bar: textField.text!)
+            if ItemManager.current_item != nil {
+                if previous == nil || previous?.bar != textField.text {
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                }
+                self.setDisplayItem(ItemManager.current_item!)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "CANCEL".localized, style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -118,7 +156,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.orange
         captureSession = AVCaptureSession()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -126,6 +164,19 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         
         do {
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
+        }
+        
+        // Improving scanner performance
+        do {
+            try videoCaptureDevice.lockForConfiguration()
+            //videoCaptureDevice.focusMode = .autoFocus
+            videoCaptureDevice.autoFocusRangeRestriction = .near
+            videoCaptureDevice.isSmoothAutoFocusEnabled = false
+            videoCaptureDevice.focusPointOfInterest = CGPoint(x: 0.5, y: 0.5)
+            captureSession.sessionPreset = .high
+            videoCaptureDevice.unlockForConfiguration()
         } catch {
             return
         }
@@ -143,8 +194,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
             captureSession.addOutput(metadataOutput)
             
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.ean13, .ean8, .upce, .code39, .code93, .code128, .dataMatrix, .aztec, .itf14, .interleaved2of5, .pdf417, .code39Mod43, .qr]
+            metadataOutput.metadataObjectTypes = [.ean13, .ean8]
             metadataOutput.rectOfInterest = CGRect(x: 0.25, y: 0.25, width: 0.5, height: 0.5)
+            
         } else {
             print("ERROR")
             return
@@ -155,10 +207,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         previewLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(previewLayer)
         
+        captureSession.startRunning()
+        
+        let v = RectView(frame:view.layer.bounds)
+        self.view.addSubview(v)
+        
         view.bringSubviewToFront(MainView)
         
-        captureSession.startRunning()
         setVisibility(false);
+        // addButton.layer.cornerRadius = 10
+        // addCountButton.layer.cornerRadius = 10
         
         ItemManager.viewController = self
         ConnectionManager.viewController = self
@@ -168,16 +226,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         addButton.isHidden = !visibility
         addCountButton.isHidden = !visibility
         removeButton.isHidden = !visibility
-        // itemTextView.isHidden = !visibility
-        // addNonScannableItemButton.isHidden = !visibility
     }
     
     func setDisplayItem(_ item : Item) {
         setVisibility(true);
         DispatchQueue.main.async {
-            self.itemTextView.text = "\n\(item.toString())"
+            self.itemTextView.text = "\n\(item.toString(tmpVal: ItemManager.tmp_value, tmpMainVal: ItemManager.tmp_last_count))"
         }
-        
         
         if (ItemManager.findByArt(art: item.art, array: ItemManager.cloud_data) == nil) {
             removeButton.isHidden = true
@@ -190,7 +245,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, 
         print("Detected")
         if metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
-                if object.type == AVMetadataObject.ObjectType.ean13 {
+                if object.type == AVMetadataObject.ObjectType.ean13 || object.type == AVMetadataObject.ObjectType.ean8 {
                     let previous = ItemManager.current_item
                     
                     ItemManager.setCurrentItemByBar(bar: object.stringValue!)

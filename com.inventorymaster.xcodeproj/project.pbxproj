@@ -20,6 +20,9 @@
 		FA36B85122E7092500D3CF1E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA36B85022E7092500D3CF1E /* logo.png */; };
 		FA36B85322E713D200D3CF1E /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36B85222E713D200D3CF1E /* ConnectionManager.swift */; };
 		FA604BB222E5E8A0005986AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA604BB122E5E8A0005986AC /* GoogleService-Info.plist */; };
+		FAA2C16022E8609D006234A9 /* RectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA2C15F22E8609D006234A9 /* RectView.xib */; };
+		FAA2C16222E860CE006234A9 /* RectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2C16122E860CE006234A9 /* RectView.swift */; };
+		FAA2C16422E88000006234A9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAA2C16322E88000006234A9 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		FA36B85022E7092500D3CF1E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		FA36B85222E713D200D3CF1E /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		FA604BB122E5E8A0005986AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAA2C15F22E8609D006234A9 /* RectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RectView.xib; sourceTree = "<group>"; };
+		FAA2C16122E860CE006234A9 /* RectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectView.swift; sourceTree = "<group>"; };
+		FAA2C16322E88000006234A9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,9 @@
 				FA604BB122E5E8A0005986AC /* GoogleService-Info.plist */,
 				FA36B84D22E6FE7E00D3CF1E /* Localizable.strings */,
 				FA36B85222E713D200D3CF1E /* ConnectionManager.swift */,
+				FAA2C15F22E8609D006234A9 /* RectView.xib */,
+				FAA2C16122E860CE006234A9 /* RectView.swift */,
+				FAA2C16322E88000006234A9 /* Settings.bundle */,
 			);
 			path = com.inventorymaster;
 			sourceTree = "<group>";
@@ -178,7 +187,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA2C16422E88000006234A9 /* Settings.bundle in Resources */,
 				FA36B84B22E6FE7E00D3CF1E /* Localizable.strings in Resources */,
+				FAA2C16022E8609D006234A9 /* RectView.xib in Resources */,
 				FA2274D822E59BF300885F33 /* LaunchScreen.storyboard in Resources */,
 				FA36B85122E7092500D3CF1E /* logo.png in Resources */,
 				FA604BB222E5E8A0005986AC /* GoogleService-Info.plist in Resources */,
@@ -241,6 +252,7 @@
 			files = (
 				FA2274D022E59BF300885F33 /* ViewController.swift in Sources */,
 				FA36B85322E713D200D3CF1E /* ConnectionManager.swift in Sources */,
+				FAA2C16222E860CE006234A9 /* RectView.swift in Sources */,
 				FA1C89CD22E5A8AE0069B87E /* TimeGroup.swift in Sources */,
 				FA1C89CA22E5A8270069B87E /* Item.swift in Sources */,
 				FA1C89CB22E5A8270069B87E /* ItemManager.swift in Sources */,
